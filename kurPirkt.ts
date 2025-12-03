@@ -5,15 +5,19 @@ import * as cheerio from 'cheerio';
 // es izdomaju parlasit docs un atradu tik simple un chill solution
 class kurPirkt {
 
-    constructor(requestQuery, page) {
+    public requestQuery: string;
+    public page: number;
+    public url: string;
+
+    constructor(requestQuery: string, page: number) {
         this.requestQuery = requestQuery;
         this.page = page;
         this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
     }
 
-    ensurePages(page) {
+    ensurePages(page: number) {
         switch(page) {
-            case undefined || null || 0 || 1:
+            case null: case undefined: case 0: case 1:
                 this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
                 break;
             default:
@@ -50,6 +54,7 @@ class kurPirkt {
         });
         console.log(products); // temp
     }
+
 
 }
 
