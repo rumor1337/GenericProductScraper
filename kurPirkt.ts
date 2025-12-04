@@ -49,7 +49,7 @@ class kurPirkt {
                 price: ((price != '') ? price : campaignprice),
                 seller: ((seller != '') ? seller : campaignseller),
                 image: 'kurpirkt.lv' + ((image != undefined) ? image : campaignimage),
-                redirectLink: `kurpirkt.lv${redirectLink}`
+                redirectLink: `https://kurpirkt.lv${redirectLink}`
             }
         });
         console.log(products); // temp

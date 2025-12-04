@@ -1,1 +1,3 @@
-node.js implementacija prod scraper
+# typescript implementacija prod scraper
+
+## bus frontend driz

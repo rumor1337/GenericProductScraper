@@ -12,16 +12,16 @@ class Salidzini {
     constructor(requestQuery: string, page: number) {
         this.requestQuery = requestQuery;
         this.page = page;
-        this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
+        this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}`;
     }
 
     ensurePages(page: number) {
         switch(page) {
             case null: case undefined: case 0: case 1:
-                this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
+                this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}`;
                 break;
             default:
-                this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}&page=${this.page}`;
+                this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}&offset=${this.page}`;
                 break;
         }
     }
@@ -29,32 +29,30 @@ class Salidzini {
     async doRequest() {
         this.ensurePages(this.page);
         const $ = await cheerio.fromURL(this.url);
-        let products = $('div[class=precebloks]').get().map(ele => {
+        let products = $('div[class=item_box_main]').get().map(ele => {
 
             // mainigie 
-            var price = $(ele).find('span[itemprop=price]').text();
-            var campaignprice = $(ele).find('div[class=campaignprice]').text();
+            var price: Number = parseFloat($(ele).find('div[class=item_price]').find('span').text().replace(',', '.'));
 
-            var seller = $(ele).find('span[itemprop=seller]').text();
-            var campaignseller = $(ele).find('div[class=campaignname]').text();
+            var seller = $(ele).find('div[class=item_shop_name]').text();
             
-            var image = $(ele).find('img[class=resimg]').attr('src');
-            // genuinely briesmigi bet strada
-            var campaignimage = $(ele).find('.resimg.campaignimage').attr('src');
+            var image = $(ele).find('img[loading=lazy]').attr('src');
 
-            var redirectLink = $(ele).find('a[target=_blank]').attr('href');
+            var redirectLink = $(ele).find('a[class=item_link]').attr('href');
 
             return {
-                title: $(ele).find('div[class=title]').text(),
-                price: ((price != '') ? price : campaignprice),
-                seller: ((seller != '') ? seller : campaignseller),
-                image: 'kurpirkt.lv' + ((image != undefined) ? image : campaignimage),
-                redirectLink: `kurpirkt.lv${redirectLink}`
+                title: $(ele).find('h2[class=item_name]').text(),
+                price: price,
+                seller: seller,
+                image: image,
+                redirectLink: `https://www.salidzini.lv${redirectLink}`
             }
         });
-        console.log(products); // temp
-    }
+        
+        return products.sort();
 
+    }
 }
+
 
 export default Salidzini
