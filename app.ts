@@ -3,13 +3,13 @@ import Salidzini from './salidzini.ts';
 
 let query: string = '3d printeru filaments';
 
-// var scraperKurPirkt = new kurPirkt('Kresls', 1);
-// scraperKurPirkt.doRequest();
-
 var scraperSalidzini = new Salidzini(query, 1);
-console.log(scraperSalidzini.doRequest());
+var salidziniArray: any = await scraperSalidzini.doRequest();
 
-// var sorter = new Sort(scraperSalidzini.doRequest());
-// sorter.sortFunction();
+var scraperkurPirkt = new kurPirkt(query, 1);
+var kurpirktArray: any = await scraperkurPirkt.doRequest();
 
 
+const combinedPrices = kurpirktArray.concat(salidziniArray);
+
+console.log(combinedPrices.sort());

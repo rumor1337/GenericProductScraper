@@ -49,7 +49,7 @@ class Salidzini {
             }
         });
         
-        return products.sort();
+        return products;
 
     }
 }
