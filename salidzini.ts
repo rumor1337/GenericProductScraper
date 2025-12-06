@@ -1,8 +1,5 @@
 import * as cheerio from 'cheerio';
 
-// es ienistu sevi
-// kapec
-// es izdomaju parlasit docs un atradu tik simple un chill solution
 class Salidzini {
 
     public requestQuery: string;
@@ -45,7 +42,7 @@ class Salidzini {
                 price: price,
                 seller: seller,
                 image: image,
-                redirectLink: `https://www.salidzini.lv${redirectLink}`
+                redirectLink: `https://www.salidzini.lv${redirectLink}`,
             }
         });
         
