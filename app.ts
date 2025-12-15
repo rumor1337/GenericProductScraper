@@ -15,17 +15,26 @@ const port = 8080
 const db = new AceBase('scraperData'); 
 
 let searchQuery: string = 'datorkresls';
+let sortDirection: string = 'descending';
 
 const retrievedData = await db.ref(searchQuery.toLowerCase()).get();
 
 // pretty much it for caching 00:39 07.12.25
+
+// add duplicate removal 15.12.25 (please remember)
 
 async function handleData() {
 
   if(retrievedData.exists()) {
     // self explanatory
     console.log(`[${searchQuery}] read data`);
-    return retrievedData.val();
+    // sort
+    switch(sortDirection) {
+        case 'ascending':
+            return retrievedData.val().sort((a: any, b: any) => a.price - b.price);
+        case 'descending':
+            return retrievedData.val().sort((a: any, b: any) => b.price - a.price);
+    }
   } else {
     // all scraper calls
     var salidziniScraper = new Salidzini(searchQuery, 1);
@@ -39,7 +48,12 @@ async function handleData() {
     // set and return the scraped data
     await db.ref(searchQuery.toLowerCase()).set(allProducts);
     console.log(`[${searchQuery}] pushed data to .db`);
-    return allProducts;
+    switch(sortDirection) {
+        case 'ascending':
+            return allProducts.sort((a: any, b: any) => a.price - b.price);
+        case 'descending':
+            return allProducts.sort((a: any, b: any) => b.price - a.price);
+    }
   }
 
 }
