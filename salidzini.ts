@@ -45,7 +45,10 @@ class Salidzini {
                 redirectLink: `https://www.salidzini.lv${redirectLink}`,
             }
         });
-        
+        if(products.length === 0) {
+            console.warn('ratelimited');
+            return [];
+        }
         return products;
 
     }

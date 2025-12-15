@@ -14,7 +14,7 @@ const port = 8080
 
 const db = new AceBase('scraperData'); 
 
-let searchQuery: string = 'kalkulators';
+let searchQuery: string = 'datorkresls';
 
 const retrievedData = await db.ref(searchQuery.toLowerCase()).get();
 
@@ -25,7 +25,7 @@ async function handleData() {
   if(retrievedData.exists()) {
     // self explanatory
     console.log(`[${searchQuery}] read data`);
-    return retrievedData.val().sort();
+    return retrievedData.val();
   } else {
     // all scraper calls
     var salidziniScraper = new Salidzini(searchQuery, 1);
@@ -39,8 +39,8 @@ async function handleData() {
     // set and return the scraped data
     await db.ref(searchQuery.toLowerCase()).set(allProducts);
     console.log(`[${searchQuery}] pushed data to .db`);
-    return allProducts.sort();
-}
+    return allProducts;
+  }
 
 }
 

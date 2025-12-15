@@ -67,19 +67,58 @@ body {
 	font-weight: 800;
 }
 
+/* .navbar {
+	display: flex;
+	color: white;
+	background-color: rgb(36,36,36);
+	align-items: center;
+	justify-content: space-between;
+	padding: .5rem;
+} */
+
 .mainContent {
-	margin-top: 1.5rem;
-	margin-right: 3rem;
-	margin-left: 3rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	margin-top: .75rem;
 }
 
-.navbar {
+.preInput {
+	color: white;
+}
+
+.username {
+	color: rgb(67, 67, 255);
+}
+
+.hostname {
+	color: rgb(216, 149, 11);
+}
+
+.terminalWindow {
 	display: flex;
-	align-items: center;
-	padding-top: 2.5rem;
-	margin-right: 3rem;
-	margin-left: 3rem;
-	justify-content: space-between
+	flex-direction: row;
+}
+
+#terminalInput {
+	display: flex;
+	color: white;
+	caret-color: white;
+	background: transparent;
+	outline: none;
+	border-style: none;
+	flex-grow: 0.5;
+}
+
+.title {
+	font-size: 16px;
+}
+
+.windowOptions > i:hover {
+	background-color: rgb(48,48,48);
+}
+
+#exitButton:hover {
+	background-color: red;
 }
 
 .search {

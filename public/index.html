@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="navbar">
-        <h1 class="headerText">nezinu</h1>
-        <div class="search">
-            <!-- awful -->
-            <span id="queryText">query</span><span>@</span><span id="whereText">nezinu</span><span>:</span><span id="symbolColor">~</span><span>$</span>
-            <input type="text" name="searchBox" class="searchBox">
-
-            <button class="searchButton">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-
-        </div>
-    </div>
     <div class="mainContent">
+        <!-- <div class="navbar">
+            <span class="title">
+                > ~
+            </span>
+        </div> -->
+        <div class="terminalWindow">
+            <form action="">
+                <label class="preInput" for="terminalInput">
+                    <span class="username">user</span>@<span class="hostname">scraper</span>:~$
+                </label>
+                <input type="text" name="terminalInput" id="terminalInput">
+            </form>
+        </div>
         <div class="footer">
             <div class="socials">
                 <a class="gh" href="https://github.com/rumor1337">
