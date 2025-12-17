@@ -58,14 +58,6 @@ body {
     background-color: rgb(245,245,245);
 }
 
-.headerText {
-    font-size: 32px;
-    color: black;
-	background-clip: text;
-	display: inline-block;
-	font-weight: 800;
-}
-
 .navbar {
 	display: flex;
 	color: white;
@@ -80,6 +72,12 @@ body {
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
 }
+
+#welcome {
+	padding-top: .75rem;
+	width: 100%;
+}
+
 
 .searchEl {
 	padding-bottom: .25rem;
@@ -125,44 +123,6 @@ body {
 	width: 80%;
 }
 
-.title {
-	font-size: 16px;
-}
-
-.windowOptions > i:hover {
-	background-color: rgb(48,48,48);
-}
-
-#exitButton:hover {
-	background-color: red;
-}
-
-.search {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	background-color: rgb(32,32,32);
-	color: white;
-	padding: .75rem;
-	border-radius: .75rem;
-}
-
-#queryText {
-	color: blue;
-}
-
-#whereText {
-	color: yellow;
-}
-
-#symbolColor {
-	color: red;
-}
-
-.search > p {
-	margin-right: .25rem;
-}
-
 .searchBox {
 	color: white;
 	background: transparent;
@@ -171,22 +131,6 @@ body {
 	border-style: none;
 	margin-right: .25rem;
 	outline: none;
-}
-
-.searchButton {
-	color: white;
-	background-color: transparent;
-	border-style: none;
-	outline: none;
-}
-
-.searchButton:hover {
-	background-color: rgb(48,48,48);
-}
-
-.headContent {
-	font-size: 18px;
-	color: rgb(0, 0, 0);
 }
 
 .footer {
