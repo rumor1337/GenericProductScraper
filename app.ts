@@ -10,11 +10,11 @@ const __dirname = dirname(__filename);
 // express
 import express from 'express';
 const app = express()
-const port = 8080
+const port:Number = 8080
 
 const db = new AceBase('scraperData'); 
 
-let searchQuery: string = 'datorkresls';
+let searchQuery: string = 'kalkulators';
 let sortDirection: string = 'descending';
 
 const retrievedData = await db.ref(searchQuery.toLowerCase()).get();
@@ -22,6 +22,8 @@ const retrievedData = await db.ref(searchQuery.toLowerCase()).get();
 // pretty much it for caching 00:39 07.12.25
 
 // add duplicate removal 15.12.25 (please remember)
+// i forgot 05.01.26
+// its whatever probably
 
 async function handleData() {
 
@@ -58,9 +60,19 @@ async function handleData() {
 
 }
 
-console.log(handleData());
+// console.log(handleData());
 
-// app.use(express.static(join(__dirname, 'public')));
-// app.listen(port, () => {
-//     console.log(`listening on port ${port}`)
-// })
+// oh no apis and stuff noooo
+
+app.get('/api/search', (req, res) => {
+    console.log(req.query.q);
+    res.send("recieved");
+});
+
+app.use(express.static(join(__dirname, 'public')));
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+});
+
+
+

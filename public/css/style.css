@@ -56,6 +56,7 @@ body {
 	background-size: cover;
 	font-family: Ubuntu;
     background-color: rgb(245,245,245);
+	overflow: hidden;
 }
 
 .navbar {
@@ -106,6 +107,7 @@ body {
 .terminalWindow {
 	padding-left: .25rem;
 	background-color: rgb(48,48,48);
+	height: 100vh;
 }
 
 .command {
@@ -145,13 +147,13 @@ body {
 
 .socials a {
 	font-size: 18px;
-	color: rgb(32, 32, 32);
+	color: rgb(255, 255, 255);
 	margin-right: .75rem;
 	text-decoration: none;
 	transition: .2s;
 }
 
 .socials a:hover {
-	color: rgb(48, 48, 48);
+	color: rgb(180, 180, 180);
 	font-size: 24px;
 }
