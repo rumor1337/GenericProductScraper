@@ -35,3 +35,13 @@ This project was created partly for school and partly out of frustration. Existi
 - Node.js
 - TypeScript
 - Cheerio
+
+---
+
+## Usage
+
+- Ensure that node, npm is installed;
+- Ensure all dependencies are installed;
+- When all that is ensured, run `node app.ts` in the working directory
+- Everything else is outlined in the browser;
+- To access the front-end, if running locally, access `localhost:8080`
