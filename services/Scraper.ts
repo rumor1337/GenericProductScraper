@@ -1,5 +1,5 @@
-import kurPirkt from './KurPirkt.ts';
-import Salidzini from './Salidzini.ts';
+import kurPirkt from '../util/KurPirkt.ts';
+import Salidzini from '../util/Salidzini.ts';
 
 class Scraper {
 

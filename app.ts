@@ -1,6 +1,6 @@
-import Scraper from './Scraper.ts';
+import Scraper from './services/Scraper.ts';
 import Express from './express/Express.ts';
-import SortUtil from './SortUtil.ts';
+import SortUtil from './util/SortUtil.ts';
 
 class app {
 
