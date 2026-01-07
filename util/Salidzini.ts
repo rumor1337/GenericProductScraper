@@ -1,15 +1,18 @@
 import * as cheerio from 'cheerio';
+import Logger from './Logger.ts';
 
 class Salidzini {
 
     public requestQuery: string;
     public page: number;
     public url: string;
+    private logger;
 
     constructor(requestQuery: string, page: number) {
         this.requestQuery = requestQuery;
         this.page = page;
         this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}`;
+        this.logger = new Logger();
     }
 
     ensurePages(page: number) {
@@ -46,7 +49,7 @@ class Salidzini {
             }
         });
         if(products.length === 0) {
-            console.warn('ratelimited');
+            this.logger.warn('[!] Ratelimited');
             return [];
         }
         return products;

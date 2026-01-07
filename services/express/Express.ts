@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import DbManager from '../DbManager.ts';
 import Scraper from '../Scraper.ts';
+import Logger from '../../util/Logger.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,34 +15,46 @@ class Express {
     private dbManager = new DbManager();
     private scraper = new Scraper();
 
+    private logger;
+
     constructor(port: number) {
         this.port = port;
+        this.logger = new Logger();
     }
 
     public startExpress() {
-        this.app.use(express.static(join(__dirname, '../public')));
-        this.app.listen(this.port, () => {
-            console.log(`[!] Listening on port ${this.port}`)
-        });
+        try {
+            this.app.use(express.static(join(__dirname, '../../public')));
+            this.app.listen(this.port, () => {
+                this.logger.info(`[!] Listening on port ${this.port}`);
+            });
+        } catch(error: any) {
+            this.logger.error(`[!!] Caught an exception at startExpress in express: ${error.message}`);
+        }
     }
 
     public async setRoutes() {
         this.app.get('/api/search', async (req, res) => {
-            const searchQuery = String (req.query.q);
+            try {
 
-            const cache = await this.dbManager.retrieveData(searchQuery);
-            var scrapedData;
+                const searchQuery = String (req.query.q);
 
-            if(cache.exists()) return res.json(cache.val());
+                const cache = await this.dbManager.retrieveData(searchQuery);
+                // slikta implementacija whatever es nevaru returna nodefinet type :(
+                if(cache!.exists()) return res.json(cache!.val());
 
-            scrapedData = await this.scraper.scrape(searchQuery);
-            this.dbManager.saveData(searchQuery, scrapedData);
+                var scrapedData = await this.scraper.scrape(searchQuery);
+                this.dbManager.saveData(searchQuery, scrapedData!);
 
-            return res.json(scrapedData);
+                return res.json(scrapedData);
+            } catch(error: any) {
+                this.logger.error(`Caught an exception at setRoutes in express: ${error.message}`);
+                return res.send("An error has occured, if this does not resolve itself in a short while, please make an issue on the Github page.");
+            }
 
         });
 
     }
 }
 
-export default Express
+export default Express;

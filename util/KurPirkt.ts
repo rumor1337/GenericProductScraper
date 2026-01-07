@@ -1,18 +1,18 @@
 import * as cheerio from 'cheerio';
+import Logger from './Logger.ts';
 
-// es ienistu sevi
-// kapec
-// es izdomaju parlasit docs un atradu tik simple un chill solution
 class kurPirkt {
 
     public requestQuery: string;
     public page: number;
     public url: string;
+    private logger;
 
     constructor(requestQuery: string, page: number) {
         this.requestQuery = requestQuery;
         this.page = page;
         this.url = `https://www.kurpirkt.lv/cena.php?q=${this.requestQuery}`;
+        this.logger = new Logger();
     }
 
     ensurePages(page: number) {
@@ -53,7 +53,7 @@ class kurPirkt {
             }
         });
         if(products.length === 0) {
-            console.warn('[!] ratelimited');
+            this.logger.warn('[!] ratelimited');
             return [];
         }
         return products;
