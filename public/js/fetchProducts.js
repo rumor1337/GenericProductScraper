@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProducts(products) {
         const grid = document.createElement('div');
         grid.className = 'productGrid';
-        
+
         products.forEach(product => {
             const card = document.createElement('fieldset');
             card.id = 'productCard';
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const productName = document.createElement('p');
             productName.className = 'productName';
             productName.textContent = product.title.length > 30 ? product.title.substring(0, 30) + '...' : product.title;
+            // productName.textContent = product.title;
             card.appendChild(productName);
             
             const link = document.createElement('a');
