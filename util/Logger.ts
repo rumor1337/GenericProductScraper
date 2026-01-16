@@ -28,6 +28,8 @@ class Logger {
 
         const path: string = "output.log";
 
+        // console.log = () => {}
+
         try {
             fs.appendFileSync(path, data);
         } catch(error: any) {

@@ -13,6 +13,7 @@ class Scraper {
     public async scrape(searchQuery: string) {
 
         try {
+
             var salidziniScraper = new Salidzini(searchQuery, 1);
             var salidziniResults: any[] = await salidziniScraper.doRequest();
 

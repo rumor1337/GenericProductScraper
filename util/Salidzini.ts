@@ -21,6 +21,7 @@ class Salidzini {
                 this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}`;
                 break;
             default:
+                // salidzini nomainija no page, uz produktu offset kkadu unknown iemeslu del; variable paliek the same bet dzive vieglaka ig
                 this.url = `https://www.salidzini.lv/cena?q=${this.requestQuery}&offset=${this.page}`;
                 break;
         }

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const productInput = document.querySelector('.productInput');
         const sortSelect = document.querySelector('.sortDirection');
-        const response = await fetch(`/api/search?q=${encodeURIComponent(productInput.value)}&sort=${sortSelect.value}`);
+        const response = await fetch(`/api/search?q=${encodeURIComponent(productInput.value.trim())}&sort=${sortSelect.value}`);
 
         const products = await response.json();
         displayProducts(products);

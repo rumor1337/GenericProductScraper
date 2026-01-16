@@ -218,8 +218,6 @@
 18:08:17 Info: [ddr5] retrieved data 
 18:08:18 Info: [ddr5] saved data 
 18:08:19 Info: [ddr5] saved data 
-18:09:38 Info: [vibrators] retrieved data 
-18:09:39 Info: [vibrators] saved data 
 18:10:13 Info: [logitech g305] retrieved data 
 20:04:55 Info: Listening on port 8080 
 20:04:56 Info: [logitech g305] retrieved data 
@@ -228,9 +226,6 @@
 20:05:10 Info: [jbl charge 5] retrieved data 
 20:05:48 Info: [jbl charge 6] retrieved data 
 20:05:49 Info: [jbl charge 6] saved data 
-21:50:35 Info: [dildo] retrieved data 
-21:50:37 Info: [dildo] saved data 
-21:50:41 Info: [dildo] retrieved data 
 21:51:16 Info: [asus v16] retrieved data 
 21:51:18 Info: [asus v16] saved data 
 23:09:03 Info: [datorgalds] retrieved data 
@@ -267,5 +262,44 @@
 08:52:59 Info: [samsung galaxy s25 ultra] retrieved data 
 09:11:21 Info: [samsung galaxy s25 ultra] retrieved data 
 09:16:08 Info: [logitech g305] retrieved data 
-09:27:32 Info: [fortnite] retrieved data 
-09:27:45 Info: [fortnite] retrieved data 
+19:10:12 Info: Listening on port 8080 
+19:10:31 Info: [samsung galaxy s23] retrieved data 
+19:10:38 Info: [samsung galaxy s23] retrieved data 
+12:35:30 Info: Listening on port 8080 
+13:04:42 Info: [samsung galaxy s25 ultra] retrieved data 
+13:11:33 Info: [samsung galaxy s25 ultra              ] retrieved data 
+13:11:33 Warning: Ratelimited 
+13:11:34 Warning: Ratelimited 
+13:11:34 Warning: Ratelimited 
+13:11:34 Warning: Ratelimited 
+13:11:35 Warning: Ratelimited 
+13:11:35 Warning: Ratelimited 
+13:11:36 Warning: Ratelimited 
+13:11:36 Warning: Ratelimited 
+13:11:37 Warning: Ratelimited 
+13:11:37 Warning: Ratelimited 
+13:11:37 Warning: Ratelimited 
+13:11:37 Info: [samsung galaxy s25 ultra              ] retrieved data 
+13:11:37 Warning: Ratelimited 
+13:11:38 Warning: Ratelimited 
+13:11:38 Warning: Ratelimited 
+13:11:38 Warning: Ratelimited 
+13:11:38 Warning: Ratelimited 
+13:11:38 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:39 Warning: Ratelimited 
+13:11:40 Error: Caught an exception at scrape in Scraper Response Error 
+13:11:40 Info: [samsung galaxy s25 ultra              ] saved data 
+13:11:40 Error: Caught an exception at scrape in Scraper Response Error 
+13:11:40 Info: [samsung galaxy s25 ultra              ] saved data 
+13:12:18 Info: Listening on port 8080 
+13:12:20 Info: [samsung galaxy s25 ultra              ] retrieved data 
+13:12:59 Info: [samsung galaxy s25 ultra] retrieved data 
+13:13:02 Info: [samsung galaxy s25 ultra] retrieved data 
+13:13:09 Info: [samsung galaxy s25 ultra] retrieved data 
+13:16:02 Info: [samsung galaxy s25 ultra] retrieved data 

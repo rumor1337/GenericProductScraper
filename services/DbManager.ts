@@ -13,7 +13,8 @@ class DbManager {
 
     public async retrieveData(query: string) {
         try {
-            var retrievedData = await this.db.ref(query.toLowerCase()).get();
+            const sanitizedQuery = query.trim().toLowerCase();
+            var retrievedData = await this.db.ref(query).get();
             this.logger.info(`[${query}] retrieved data`);
             return retrievedData;
         } catch(error: any) {
@@ -24,7 +25,8 @@ class DbManager {
 
     public async saveData(query: string, data: any[]) {
         try {
-            await this.db.ref(query.toLowerCase()).set(data);
+            const sanitizedQuery = query.trim().toLowerCase();
+            await this.db.ref(sanitizedQuery).set(data);
             this.logger.info(`[${query}] saved data`);
         } catch(error: any) {
             this.logger.warn(`Caught an exception at saveData in DbManager. ${error.message}`);
