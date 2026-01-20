@@ -303,3 +303,12 @@
 13:13:02 Info: [samsung galaxy s25 ultra] retrieved data 
 13:13:09 Info: [samsung galaxy s25 ultra] retrieved data 
 13:16:02 Info: [samsung galaxy s25 ultra] retrieved data 
+13:01:50 Info: Listening on port 8080 
+13:02:05 Info: [samsung galaxy s25 ultra] retrieved data 
+13:02:46 Info: [samsung galaxy s25 ultra] retrieved data 
+13:03:07 Info: [running shoes] retrieved data 
+13:03:08 Info: [running shoes] retrieved data 
+13:03:10 Warning: Caught an exception at saveData in DbManager. Property "image" has invalid value. Cannot store undefined values. Set removeVoidProperties option to true to automatically remove undefined properties 
+13:03:10 Warning: Caught an exception at saveData in DbManager. Property "image" has invalid value. Cannot store undefined values. Set removeVoidProperties option to true to automatically remove undefined properties 
+13:03:42 Info: [fortnite] retrieved data 
+12:33:58 Info: Listening on port 8080 
